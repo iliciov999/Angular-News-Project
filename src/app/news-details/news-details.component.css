@@ -1,0 +1,22 @@
+.card-img-detail img{
+    width: 40%;    
+}
+.card-img-detail{
+    display: flex;
+    justify-content: center;
+}
+.card-title-detail{
+    text-align: center;
+}
+.news-date{
+    color: #c4c4c4;
+    padding: 10px;
+}
+img{
+    width: 50%;
+}
+.card-box{
+    width: 70%;
+    margin: 30px auto;
+    
+}
