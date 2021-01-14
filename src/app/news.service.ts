@@ -15,6 +15,9 @@ import { Observable } from 'rxjs';
     getById(id):Observable<any>{
         return this.http.get(`https://tv8.md/wp-json/wp/v2/posts/${id}`);
     }
+    fetchImages():Observable<any>{
+      return this.http.get(`https://tv8.md/wp-json/wp/v2/media/`);
+    }
 
   }
 

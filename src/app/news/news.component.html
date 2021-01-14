@@ -1,16 +1,17 @@
 <div class="col-xs-12 col-sm-12 col-lg-12">
     <div class="row space-row">
     <div class="card">
- 
-     
- 
-      <mat-card *ngFor="let item of apiData" class="card-container">
+
+      <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+        <p style="color: white">Please Wait. </p>  
+        </ngx-spinner>  
+      <mat-card *ngFor="let item of apiData | paginate:{itemsPerPage: 3, currentPage: p}" class="card-container">
            
              <div class="card-wrapper">
  
-                   <mat-card-header>
-                     <div class="card-img">
-                         <img src="https://img.freepik.com/free-vector/breaking-news-tv-concept-backdrop-banner_1017-14194.jpg?size=626&ext=jpg" alt="Mobirise" title="" media-simple="true">
+                   <mat-card-header  *ngFor="let media of media$ | async">
+                     <div class="card-img"  *ngIf="item.id === media.post" class="card-img-detail">
+                         <img src="{{media.media_details.sizes.medium.source_url}}" alt="Imaginea-noutatii"  media-simple="true">
                      </div>
                    </mat-card-header>
                  
@@ -29,10 +30,19 @@
                        {{item.date}} <button class="detail-button"><a [routerLink]="['/news-details/', item.id]" routerLinkActive="active" >Vezi detalii...</a> </button>
                      </p>
                  </div>
-               
+                 
+                
+                 
              </div>
+             
  
    </mat-card>
+    
+   <div class="pagination-container" id="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div> 
+  
+
  </div>
  </div>
  </div> 

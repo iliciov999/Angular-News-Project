@@ -1,6 +1,7 @@
 {
   "name": "angular-project",
   "version": "0.0.0",
+  "homepage": "https://github.com/iliciov999/Angular-News-Project.git",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,6 +20,8 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "ngx-pagination": "^5.0.0",
+    "ngx-spinner": "^10.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

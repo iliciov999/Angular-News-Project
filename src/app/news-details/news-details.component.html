@@ -1,24 +1,27 @@
 <div class="card-wrapper-detail" >
-      
+       
   <div class="news-date">{{news.date}}</div> 
-    
+
         <h1 class="card-title-detail pb-3 mbr-fonts-style display-7">
             {{news.title.rendered}}
             <h4 [innerHtml] = "news.excerpt.rendered"></h4>
            
         </h1>
 
-        {{news.video_embed}}
+        
+<ng-container *ngFor="let media of media$ | async">
+<div *ngIf="news.featured_media === media.id" class="card-img-detail">    
+    
+    <img src="{{media.guid.rendered}}" alt="Mobirise" title="" media-simple="true">
+</div>
+</ng-container>  
 
-    <div class="card-img-detail">
-        <img src="https://img.freepik.com/free-vector/breaking-news-tv-concept-backdrop-banner_1017-14194.jpg?size=626&ext=jpg" alt="Mobirise" title="" media-simple="true">
-    </div>
  
 
   
 <div class="card-box" >      
 
-   <div [innerHtml] = "news.content.rendered"></div>
+   <div [innerHtml] = "news.content.rendered" class="card-body"></div>
     
 </div>
 
